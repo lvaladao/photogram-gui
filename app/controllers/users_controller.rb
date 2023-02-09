@@ -6,7 +6,7 @@ class UsersController < ApplicationController
   end
 
   def details
-    @user = User.where({ :id => params.fetch("user_id") }).at(0)
+    @user = User.where({ :username => params.fetch("username") }).at(0)
 
     render({ :template => "user_templates/show.html.erb" })
   end
