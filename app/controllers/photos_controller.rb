@@ -20,7 +20,8 @@ class PhotosController < ApplicationController
 
   def create
     @new_photo = Photo.new
-    @new_photo.image = params.fetch("input_caption")
+    @new_photo.image = params.fetch("input_image")
+    @new_photo.caption = params.fetch("input_caption")
     @new_photo.owner_id = params.fetch("input_owner_id")
     @new_photo.save
 
